@@ -8,7 +8,7 @@ public class Reposition : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.CompareTag("Area"))
-           
+
             return;
 
         Vector3 playerPos = Gamemanager.instance.player.transform.position;
@@ -23,7 +23,7 @@ public class Reposition : MonoBehaviour
         switch (transform.tag)
         {
             case "Ground":
-                if(diffX > diffY)
+                if (diffX > diffY)
                 {
                     transform.Translate(Vector3.right * dirX * 40);
                 }
@@ -36,15 +36,15 @@ public class Reposition : MonoBehaviour
                 break;
         }
     }
-       
+
     void Start()
     {
-        
+
 
     }
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
