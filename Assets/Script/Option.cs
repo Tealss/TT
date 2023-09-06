@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Option : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject option;
+
+    public void OptionSet()
     {
-        
+        if(option.activeSelf == true)
+            option.SetActive(false);
+        else
+            option.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

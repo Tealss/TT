@@ -8,7 +8,6 @@ public class SoundManager : MonoBehaviour
     public AudioSource Musicsource;
     public Slider slider;
     public GameObject imageObject; 
-    private bool isVisible = true;
 
     public void SetMusicVolume(float volume)
     {
