@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Select : MonoBehaviour
+public class Selects : MonoBehaviour
 {
     public GameObject[] characterPrefabs; //  Prefabs 배열
     private GameObject currentCharacter;   // 현재 캐릭
@@ -29,7 +29,6 @@ public class Select : MonoBehaviour
 
     public void ChangeCharacter(int characterIndex)
     {
-
         // 캐릭 변경
         SpawnCharacter(characterIndex);
     }

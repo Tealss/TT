@@ -29,6 +29,7 @@ public class player : MonoBehaviour
 
     void Update()
     {
+
         // Input = 유니티에서 받는 모든 입력을 관리하는 클래스
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");

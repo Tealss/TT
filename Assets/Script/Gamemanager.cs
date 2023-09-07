@@ -28,5 +28,6 @@ public class Gamemanager : MonoBehaviour
         string formattedTime = currentTime.ToString("HH:mm:ss");
 
         timeText.text = "Time : " + formattedTime;
+
     }
 }
