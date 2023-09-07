@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
 
     public void SetMusicVolume(float volume)
     {
+
         Musicsource.volume = volume;
         if (slider.value == 0)
         {
