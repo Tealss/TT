@@ -45,6 +45,7 @@ public class player : MonoBehaviour
     {
         // 인풋 백터.매그니튜드 = 벡터의 순수한 크기 값
         anim.SetFloat("Speed", inputVec.magnitude);
+        
 
         // 인풋벡터가 0이 아닐때
         if (inputVec.x != 0)
