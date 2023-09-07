@@ -29,6 +29,7 @@ public class player : MonoBehaviour
 
     void Update()
     {
+
         // Input = 유니티에서 받는 모든 입력을 관리하는 클래스
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
@@ -45,6 +46,7 @@ public class player : MonoBehaviour
     {
         // 인풋 백터.매그니튜드 = 벡터의 순수한 크기 값
         anim.SetFloat("Speed", inputVec.magnitude);
+        
 
         // 인풋벡터가 0이 아닐때
         if (inputVec.x != 0)
