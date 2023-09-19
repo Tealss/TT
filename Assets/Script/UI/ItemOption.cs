@@ -5,37 +5,46 @@ using UnityEngine.UI;
 public class ItemOption : MonoBehaviour
 {
 
-    [Header ("#Popup")]
+    [Header("#Popup")]
     public GameObject popupWindow;
     private bool isPopupActive = false;
+    public bool isOption = false;
 
-    private void Start()
-    {
-        popupWindow.SetActive(false);
-    }
 
     public void OnPointerEnter()
     {
-        int currentLayer = gameObject.layer;
+        isPopupActive = true;
+        popupWindow.SetActive(true);
 
-        if (currentLayer == LayerMask.NameToLayer("Click"))
-        {
-            popupWindow.SetActive(true);
-            isPopupActive = true;
-        }
-        else if (currentLayer == LayerMask.NameToLayer("Click2"))
-        {
-            popupWindow.SetActive(true);
-            isPopupActive = true;
-        }
     }
 
     public void OnPointerExit()
     {
-        if (isPopupActive)
+        Invoke("TimeCheck", 0.01f);
+    }
+
+    public void optionON()
+    {
+        isOption = true;
+    }
+    public void optionOFF()
+    {
+        if (popupWindow.GetComponent<ItemOption>().isOption)
         {
-            popupWindow.SetActive(false);
+            isOption = false;
             isPopupActive = false;
+            popupWindow.SetActive(false);
         }
     }
+
+    public void TimeCheck()
+    {
+        if (!popupWindow.GetComponent<ItemOption>().isOption)
+        {
+            isPopupActive = false;
+            popupWindow.SetActive(false);
+        }
+
+    }
+
 }
