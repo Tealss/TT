@@ -1,11 +1,13 @@
+using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemOption : MonoBehaviour
 {
+
     [Header ("#Popup")]
     public GameObject popupWindow;
-    private bool popupset = false;
+    private bool isPopupActive = false;
 
     private void Start()
     {
@@ -14,17 +16,26 @@ public class ItemOption : MonoBehaviour
 
     public void OnPointerEnter()
     {
-        popupWindow.SetActive(true);
-        if (popupWindow.activeSelf == true)
-        {
-            popupset = true;
-        }
+        int currentLayer = gameObject.layer;
 
+        if (currentLayer == LayerMask.NameToLayer("Click"))
+        {
+            popupWindow.SetActive(true);
+            isPopupActive = true;
+        }
+        else if (currentLayer == LayerMask.NameToLayer("Click2"))
+        {
+            popupWindow.SetActive(true);
+            isPopupActive = true;
+        }
     }
 
     public void OnPointerExit()
     {
-        popupWindow.SetActive(false);
-        popupset = false;
+        if (isPopupActive)
+        {
+            popupWindow.SetActive(false);
+            isPopupActive = false;
+        }
     }
 }
