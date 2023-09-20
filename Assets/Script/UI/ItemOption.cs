@@ -20,7 +20,7 @@ public class ItemOption : MonoBehaviour
 
     public void OnPointerExit()
     {
-        Invoke("TimeCheck", 0.01f);
+        Invoke("TimeCheck", 0.001f);
     }
 
     public void optionON()
