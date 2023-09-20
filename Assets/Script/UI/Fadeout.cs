@@ -5,7 +5,7 @@ using System.Collections;
 public class TextFadeOut : MonoBehaviour
 {
     public Text characterNameText;
-    public float fadeDuration = 1.5f; 
+    public float fadeDuration = 3f;
 
     private IEnumerator fadeOutCoroutine;
 
@@ -29,14 +29,14 @@ public class TextFadeOut : MonoBehaviour
 
     private IEnumerator FadeOutText()
     {
-        yield return new WaitForSeconds(fadeDuration);
+        // yield return new WaitForSeconds(fadeDuration);
 
         float elapsedTime = 0f;
         Color textColor = characterNameText.color;
         while (elapsedTime < fadeDuration)
         {
             elapsedTime += Time.deltaTime;
-            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            float alpha = Mathf.Lerp(3f, 0f, elapsedTime / fadeDuration);
             textColor.a = alpha;
             characterNameText.color = textColor;
             yield return null;

@@ -6,17 +6,24 @@ using UnityEngine.UI;
 
 public class CreateCharacter : MonoBehaviour
 {
+ 
+
     [Header("#InputField")]
     public InputField inputField;
-    public Text characterNameText;
+    public static Text characterNameText;
     public Text GuideText;
     public GameObject Popup;
+    public TextFadeOut textFadeOut;
     [Header("\n#Delegate")]
     public CanvasGroup popupPanel;
     public Text popupText;
 
     public delegate void PopupDelegate(string enteredName);
     public static event PopupDelegate OnPopup;
+    private void Start()
+    {
+        characterNameText = gameObject.AddComponent<Text>();
+    }
     //void Start()
     //{
     //    OnPopup += ShowPopup;
@@ -41,26 +48,32 @@ public class CreateCharacter : MonoBehaviour
     public void GenerateCharacterName()
     {
         string enteredName = inputField.text;
-        if (!string.IsNullOrEmpty(enteredName) && !enteredName.Contains(" ") && enteredName.Length <= 7)
+        if (!string.IsNullOrEmpty(enteredName) && !enteredName.Contains(" ") && enteredName.Length <= 6)
         {
             characterNameText.text = enteredName;
+
+            // 유니티에서 저장시켜줌 = 해쉬테이블
+            // PlayerPrefs.SetString("Name", enteredName);
+
             popupText.text = enteredName+ " (으)로 아이디를 생성하시겠습니까? ";
             Popup.SetActive(true);
-
+            DontDestroyOnLoad(characterNameText);
         }
         else if (!string.IsNullOrEmpty(enteredName) && enteredName.Contains(" "))
         {
             GuideText.text = "띄어쓰기는 불가능합니다!";
-
+            textFadeOut.DisplayErrorMessage("띄어쓰기는 불가능합니다!");
         }
-        else if (!string.IsNullOrEmpty(enteredName) && enteredName.Length >= 7)
+        else if (!string.IsNullOrEmpty(enteredName) && enteredName.Length >= 6)
         {
             GuideText.text = "최대 7글자 이하만 가능합니다.";
+            textFadeOut.DisplayErrorMessage("최대 7글자 이하만 가능합니다.");
 
         }
         else 
         {
             GuideText.text = "캐릭터 이름을 입력하세요";
+            textFadeOut.DisplayErrorMessage("캐릭터 이름을 입력하세요");
 
         }
     }
