@@ -9,6 +9,7 @@ public class Name : MonoBehaviour
     private void Start()
     {
         name.text = CreateCharacter.characterNameText.text;
+
         //Debug.Log(PlayerPrefs.GetString("Name"));
         // name.text = PlayerPrefs.GetString("Name");
         //float playerPrefsStartTime = Time.realtimeSinceStartup;

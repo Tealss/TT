@@ -10,6 +10,8 @@ public class Inventory : MonoBehaviour
     bool inventoryActive = false;
     public GameObject statsPanel;
     bool statsActive = false;
+    public GameObject shopPanel;
+    bool shopActive = false;
 
     private void Start()
     {
@@ -28,6 +30,12 @@ public class Inventory : MonoBehaviour
         {
             statsActive = !statsActive;
             statsPanel.SetActive(statsActive);
+        }
+
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            shopActive = !shopActive;
+            shopPanel.SetActive(shopActive);
         }
     }
 }

@@ -66,8 +66,8 @@ public class CreateCharacter : MonoBehaviour
         }
         else if (!string.IsNullOrEmpty(enteredName) && enteredName.Length >= 6)
         {
-            GuideText.text = "최대 7글자 이하만 가능합니다.";
-            textFadeOut.DisplayErrorMessage("최대 7글자 이하만 가능합니다.");
+            GuideText.text = "최대 6글자 이하만 가능합니다.";
+            textFadeOut.DisplayErrorMessage("최대 6글자 이하만 가능합니다.");
 
         }
         else 
