@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class CreateCharacter : MonoBehaviour
@@ -10,8 +11,9 @@ public class CreateCharacter : MonoBehaviour
 
     [Header("#InputField")]
     public InputField inputField;
-    public static Text characterNameText;
-    public Text GuideText;
+    public static string characterId = "";
+    public Text characterNameText;
+    public Text guideText;
     public GameObject Popup;
     public TextFadeOut textFadeOut;
     [Header("\n#Delegate")]
@@ -51,7 +53,7 @@ public class CreateCharacter : MonoBehaviour
         if (!string.IsNullOrEmpty(enteredName) && !enteredName.Contains(" ") && enteredName.Length <= 6)
         {
             characterNameText.text = enteredName;
-
+            characterId = enteredName;
             // 유니티에서 저장시켜줌 = 해쉬테이블
             // PlayerPrefs.SetString("Name", enteredName);
 
@@ -61,18 +63,18 @@ public class CreateCharacter : MonoBehaviour
         }
         else if (!string.IsNullOrEmpty(enteredName) && enteredName.Contains(" "))
         {
-            GuideText.text = "띄어쓰기는 불가능합니다!";
+            guideText.text = "띄어쓰기는 불가능합니다!";
             textFadeOut.DisplayErrorMessage("띄어쓰기는 불가능합니다!");
         }
         else if (!string.IsNullOrEmpty(enteredName) && enteredName.Length >= 6)
         {
-            GuideText.text = "최대 6글자 이하만 가능합니다.";
+            guideText.text = "최대 6글자 이하만 가능합니다.";
             textFadeOut.DisplayErrorMessage("최대 6글자 이하만 가능합니다.");
 
         }
         else 
         {
-            GuideText.text = "캐릭터 이름을 입력하세요";
+            guideText.text = "캐릭터 이름을 입력하세요";
             textFadeOut.DisplayErrorMessage("캐릭터 이름을 입력하세요");
 
         }

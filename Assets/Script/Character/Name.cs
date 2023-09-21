@@ -8,7 +8,8 @@ public class Name : MonoBehaviour
     public Text name;
     private void Start()
     {
-        name.text = CreateCharacter.characterNameText.text;
+        name.text = CreateCharacter.characterId;
+        // name.text = CreateCharacter.characterNameText.text;
 
         //Debug.Log(PlayerPrefs.GetString("Name"));
         // name.text = PlayerPrefs.GetString("Name");
