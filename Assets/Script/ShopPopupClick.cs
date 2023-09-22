@@ -20,7 +20,15 @@ public class ShopPopupClick : MonoBehaviour
         Pos = Pos.Find("Scroll View");
         Pos = Pos.Find("Viewport");
         Pos = Pos.Find("Content");
+
         GameObject item = Instantiate(Pre, Pos);
+
+        //Pos = Pos.Find("Canvas");
+        //Pos = Pos.Find("Background");
+        //Pos = Pos.Find("Iventory");
+        //Pos = Pos.Find("Scroll View");
+        //Pos = Pos.Find("Viewport");
+        //Pos = Pos.Find("Content");
 
     }
 }
