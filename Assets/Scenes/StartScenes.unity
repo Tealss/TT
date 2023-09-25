@@ -1779,7 +1779,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 1342723338}
-  GuideText: {fileID: 1950565657}
+  characterNameText: {fileID: 1117742661}
+  guideText: {fileID: 1950565657}
   Popup: {fileID: 1042305345055101217}
   textFadeOut: {fileID: 1950565661}
   popupPanel: {fileID: 0}
